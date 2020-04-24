@@ -1,0 +1,44 @@
+﻿BASKAR K S
+TECHNICAL LEAD
+Career Objective 
+Diligent professional with 10+ years of experience and a proven knowledge of application development, programming, and cellular communications. Aiming to leverage my skills to successfully fill the Technical Lead role at your company. 
+Contact 
+·
+baskarks@gmail.com
+·
+(988) 014-4492
+·
+4059, MIG, MMDA, 1st Main Road, Mathur Chennai, Tamil Nadu, 600068
+Education 
+SRI VENKATESWARA COLLEGE OF ENGINEERING (SRIPERUMBUDUR)
+GPA: 70.0
+Chennai, Tamil Nadu 
+B.E Electronics and Communication (Apr 2005) 
+SRI NALLALAGHU POLYTECHNIC
+GPA: 91.83
+Chennai, Tamil Nadu 
+D.E.C.E Electronics and Communication (Apr 2002) 
+F.E.S MATRICULATION HR SEC SCHOOL
+GPA: 82.91
+Chennai, Tamil Nadu 
+High School Diploma (Apr 1999) 
+Additional Skills 
+· Programming Languages - C, Core-JAVA, C++, Kotlin, Python
+· Source Control - Perforce, GIT
+· Development Platform - Android 2.x, 4.x, 5.01, 7.0, 8.1
+· Android Tools - Retrofit, Dagger-2, RxJava, Glide, MVVM
+· Debugging Tools - ADB, TRACE 32, DDMS, QXDM, BREW Debugger and Logger
+· Web Services - REST, SOAP, XML
+· IDE - Intellij, Visual Studio, Source Insight, Eclipse, X-Code.
+· Embedded OS - VXWorks, REX
+Licenses and Certifications 
+· "Advanced Diploma in Real Time Operating Systems" from Cranes Software International Limited (Bangalore)
+· "Computer Hardware Maintenance" from Agastya Technologies (Chennai)
+Professional Experience 
+May 2010 – Jan 2017 
+TECHNICAL LEAD – PRODUCT DEVELOPMENT 
+Harman Connected Services, Bangalore, Bangalore, Karnataka
+Oct 2006 – May 2010 
+SENIOR SOFTWARE ENGINEER 
+MindTree Wireless Pvt Ltd, Bangalore, Karnataka
+
