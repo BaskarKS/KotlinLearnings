@@ -24,17 +24,21 @@ fun main() {
     var carTwoCopyOrderChanged = carTwo.copy(model = "ford", color = "Red")
     println(carTwoCopyOrderChanged)
 
+    topLevelFunction()
+    println(TopLevelClass.Companion.FUNCTION_CONSTANT)
+
 }
 
 class TopLevelClass {
-    companion object {
+    companion object{
         const val FUNCTION_CONSTANT = 111
     }
 }
 
 fun topLevelFunction() {
-    println("Top Level Function $topLevelVariable")
+    println("Top Level Function showing top level variable : $topLevelVariable")
     topLevelVariable = 2021
+    println("Top Level Function showing changed top level variable : $topLevelVariable")
     println("Top Level Constant $TOP_LEVEL_CONSTANT")
 }
 
@@ -51,7 +55,7 @@ public const val TOP_LEVEL_CONSTANT = 100
 * 1. primary constructor should have at-least one parameter
 * 2. all primary constructor parameters should be either val / var, should be defined.
 * cant have declaration in primary constructor and define with in the class
-* Eg: data class Sample(val one : String, two : String) <= Error: two is not defined / in-valid
+* Eg: data class Sample(val one : String, two : String) <= Error: two is not defined - in-valid
 * 3. data class cant be inner classes / abstract / sealed
 * 3. can define parameters with in the data class apart from primary constructor,
 * but the inbuilt methods(equals()..) wont include those variables. have to override

@@ -1,7 +1,7 @@
 fun main(args: Array<String>) {
     val str: String? =  getValue()
     // str variable has possibility to become null, hence its defined as nullable type
-    // operation can be performed on str variable is restricted to check for null
+    // operation can be performed on str variable is restricted to force check for null
     // before using it
 
     //println(str.toLowerCase()) // Error here
@@ -38,7 +38,7 @@ fun main(args: Array<String>) {
     println(status)
     println(status is String?)
 
-    // val status = getValue() ?: "Default Value" => is equivalent to below 5 lines.
+     // var status = getValue() ?: "Default Value" //=> is equivalent to below 5 lines.
     if (getValue() == null) { // left side of elvis operator
         status = "Default Value" //right side of  elvis operator
     } else {
@@ -68,7 +68,7 @@ fun main(args: Array<String>) {
 
     val hasStringAlways : String? = "Has Some value Always"
 
-    println("Using NOT-NULL ASSERT !!")
+    println("Using NOT-NULL ASSERT (!!)")
     println(hasStringAlways)
 
     val defaultValue: String = hasStringAlways!! // <= raise exception if hasStringAlways is null otherwise use it
@@ -86,7 +86,7 @@ fun main(args: Array<String>) {
     val str4: String? = null
     val str5 = "its not nullable"
     val str6 = "its not nullable"
-    println(str4 == str5) // this does content comparison .equals(), but doesnt cause
+    println(str4 == str5) // this does content comparison .equals(), but doesn't cause
     // NPE because == is safe-operator null check is done internally
     println(str6 === str5)
 
@@ -97,12 +97,16 @@ fun main(args: Array<String>) {
     // sometimes we need to use nullable value(String?)
     // and pass it to non-nullable type(String)
 
-    //if we extract non-nullable type using (!! not-null) we may get exception if
-    // non-nullable variable is null
-    //Better to use Let to extract value from non-nullable type only if the value is not null
+    // if we extract nullable type using (!! not-null) we may get exception if
+    // nullable variable is null
+    //Better to use Let to extract value from nullable type in safe way, return value otherwise null
     checkLet?.let { println(it is String) }
     var getString = checkLet?.let { it }
     println(getString is String)
+
+    var checkingLet = null
+    var usingLet = checkingLet?.let { it }
+    println(usingLet)
 
     getLet = checkLet?.let { it.toLowerCase()
                                                 it.toUpperCase()
@@ -120,6 +124,7 @@ fun main(args: Array<String>) {
     nullableArray[0] = 10
     val nullableArrayOfNullable = arrayOfNulls<Int?>(5)
     nullableArrayOfNullable[0] = 15
+    println("Checking Nullable Arrays::")
     for (i in nullableArray)
         println(i)
     println(nullableArray[0] is Int)
@@ -127,6 +132,7 @@ fun main(args: Array<String>) {
     println(nullableArrayOfNullable[0] is Int)
     println(nullableArrayOfNullable[0] is Int?)
 
+    println("Checking Safe Cast")
     val intValue  = 10
     var inString: String?
     inString = intValue as? String // if we are unsure that casting can happen or not. Better to use safe-cast "as?"

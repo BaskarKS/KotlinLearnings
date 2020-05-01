@@ -5,6 +5,12 @@ fun main(args: Array<String>) {
     // 1st way. if we have/know values in advance
     // 2nd way. if we don't know the values in advance, create with some default values
 
+    // collection array creating way, arrayOf() / Array<Int>(size){}
+    // primitive array creating way, IntArrayOf(values), LongArrayOf(values) /
+    // IntArray(size), LongArray(Size)
+    // convert collection array to primitive array by .toIntArray(), .toLongArray
+    // convert primitive array to collection array by .toTypedArray()
+
     //Type 1,  Way 1 (collection Arrays - know values in advance)
     val longArray = arrayOf(1L, 2L, 3L)
     println("is its Long Array ${longArray is Array<Long>}")
@@ -23,7 +29,7 @@ fun main(args: Array<String>) {
     val intArrayTwo = Array<Int>(10){0}
     println("is its Integer Array ${intArrayTwo is Array<Int>}")
 
-    val longArrayTwo = Array<Long>(5) {i -> i.toLong()}
+    val longArrayTwo = Array<Long>(5) {i -> i.toLong()} // i is index value 0, 1, 2, 3, 4
     println("is its Long Array ${longArrayTwo is Array<Long>}")
     println(longArrayTwo.contentToString())
 
@@ -31,7 +37,7 @@ fun main(args: Array<String>) {
     println("is its Float Array ${floatArray is Array<Float>}")
     println(floatArray.contentToString())
 
-    //Type 2,  Way 1 (collection Arrays - don't know values in advance)
+    //Type 2,  Way 1 (primitive Arrays - don't know values in advance)
     println("Type 2,  Way 1 (primitive Arrays - know values in advance)")
 
     var primIntArray = intArrayOf(1, 2, 3, 4)

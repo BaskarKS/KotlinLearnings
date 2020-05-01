@@ -69,7 +69,7 @@ public class BusAccess {
         // we should pass both the arguments, even num is assigned with
         // default value in kotlin. we cant use that signature from Java
 
-        // to use the default param assigned signature in Java, use @JvmOverloads annotation
+        // to use the default param assigned signature in Java, use @JvmOverloads annotation                                                                        
         BusKt.usingDefaultArgsInJava("Singapore");
         BusKt.usingDefaultArgsInJava("Singapore", 99);
         BusKt.usingDefaultArgsInJava("Singapore", 11, false);

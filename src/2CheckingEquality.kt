@@ -1,5 +1,10 @@
+import list
 
 class User(var name: String, val id: Int) {
+    init {
+        val nameList: list = ArrayList()
+        nameList.add(name)
+    }
     override fun equals(other: Any?): Boolean {
         if (other is User) {
             return name == other.name && id == other.id
@@ -24,18 +29,20 @@ fun main(args : Array<String>) {
     val userOne = User("mary", 1)
     val userTwo = User("john", 2)
     val userThree = User("john", 2)
-    println(userOne == userTwo)
-    println(userTwo == userThree)
-    println(userOne.equals(userTwo))
-    println(userTwo.equals(userThree))
-    println("reference comparison : " + (userOne === userTwo))
-    println("reference comparison : " + (userTwo === userThree))
+
+    println(userOne == userTwo) //User defines equals(), does content equality, false
+    println(userTwo == userThree) //User defines equals(), does content equality, true
+    println(userOne.equals(userTwo)) //does content equality, false
+    println(userTwo.equals(userThree)) //does content equality, true
+
+    println("reference comparison : " + (userOne === userTwo)) //User defines equals(), does reference equality, false
+    println("reference comparison : " + (userTwo === userThree)) //User defines equals(), does reference equality, false
     val userFour = userTwo
-    println("reference comparison : " + (userTwo === userFour))
+    println("reference comparison : " + (userTwo === userFour)) //User defines equals(), does reference equality, true
 
     println("Checking not-equal")
-    println("reference comparison : " + (userTwo !== userFour))
-    println("reference comparison : " + (userTwo !== userThree))
-    println(userTwo != userThree)
-    println(userOne != userFour)
+    println("reference comparison : " + (userTwo !== userFour))//User defines equals(), does reference inequality, false
+    println("reference comparison : " + (userTwo !== userThree)) //User defines equals(), does reference equality, true
+    println(userTwo != userThree) //User defines equals(), does content inequality, false
+    println(userOne != userFour)  //User defines equals(), does content inequality, true
 }

@@ -7,7 +7,7 @@ fun main(args: Array<String>) {
     var longValue: Long = 111
     var floatValue: Float = 1.1f
 
-    //byteValue = value // automatic wideing of numbers is not possible in kotlin
+    //byteValue = value // automatic widening of numbers is not possible in kotlin
 
     // apart from int and double, explicitly need to mention the value type or variable type
 
@@ -24,6 +24,7 @@ fun main(args: Array<String>) {
     var defaultFloat = 10.5
     println(defaultFloat is Double)
     println(defaultFloat.to(Float))
+    println(defaultFloat.toFloat())
 
     //to create Float variable 1 way - have to mention value with f suffix
     var floatTypeOne = 10.5f
@@ -63,7 +64,7 @@ fun main(args: Array<String>) {
     //3. Nothing class - its used to mention the kotlin compiler that the function
     // will never return, like if the function contains infinite loop and will never return
     // or always throws exception, such functions are defined to compiler using nothing class
-
+    someOperation()
 }
 
 fun neverReturnTypeOne() : Nothing{

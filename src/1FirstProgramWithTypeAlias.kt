@@ -21,8 +21,8 @@ fun main(args: Array<String>) {
         employee2 = Employee("number", number.toInt())
     println(employee2)
 
-    val ids : list
-    ids = getList()
+    val ids : list // declare variable of typealias type,no problem even if its val type
+    ids = getList() // define variable, val type can be defined and assigned once
     println(ids)
 }
 
@@ -35,8 +35,12 @@ fun getList() : list {
 class Employee(var name: String, val id: Int) {
     var nameList : list = ArrayList()
 
-    override fun toString(): String {
+    init {
         nameList.add(name)
+        //nameList.add(10) cant add other type apart from String
+    }
+
+    override fun toString(): String {
         return "Emp Name : $name, Emp Id : $id";
     }
 }
