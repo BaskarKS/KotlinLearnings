@@ -25,12 +25,15 @@ fun main() {
     // lotOfCars[0] is Array<Car>
     // lotOfCars[1] is Array<Car>
     // lotOfCars[2] is Car
-    lotOfCars = arrayOf(*manyCars, *moreCars, car5)
-    for ( item  in lotOfCars)
+    lotOfCars = arrayOf(*manyCars, *moreCars, car5) // lotOfCars is already defined above which is Array<Any>
+    println("Checking type of LotOfCars: ")
+    for ( item  in lotOfCars) {
         println(item)
+        println("item is Any : ${item is Any}")
+    }
 
     println("************ Just Checking *************")
-    var extractCars = lotOfCars.toList().filter { it -> (it as Car).year >= 2010}
+    var extractCars: List<Any> = lotOfCars.toList().filter { it -> (it as Car).year >= 2010}
     for (car in extractCars)
         println(car)
     println("************ Just Checking *************")
@@ -40,30 +43,36 @@ fun main() {
     for ( item  in totalCars)
         println(item)
 
-     // not totalCars contains only Car elements, we can just unpack and pass it to printColors()
+     // now totalCars contains only Car elements, we can just unpack and pass it to printColors()
     printColors(*totalCars)
 
-
-    var allCars = lotOfCars.asList().map{ it as Car }.toTypedArray()
-    println(allCars is Array<Car>)
+    //lotOfCars is Array<Any>, below ways will help to create a Array<Car?> type from lotOfCars
+    var allCars = lotOfCars.asList().map{ it as Car }.toTypedArray() // allCars is Array<Car>
+    println(allCars is Array<Car>) // true
 
     var getCars: Array<Car?> = arrayOfNulls(lotOfCars.size)
     System.arraycopy(lotOfCars, 0, getCars, 0, lotOfCars.size)
-    println(getCars is Array<Car?>)
+    println(getCars is Array<Car?>) // getCars is Array<Car?>
 
-    var newCars: Array<Car?> = arrayOfNulls(lotOfCars.size)
+    var newCars: Array<Car?> = arrayOfNulls(lotOfCars.size) // newCars is Array<Car?>
     for (index in lotOfCars.indices)
         newCars[index] = lotOfCars[index] as Car
     println(newCars is Array<Car?>)
 
-    printColors(*newCars)
+    printCarColors(*newCars)
 
     println("Checking Extension Function")
     val someString = "december"
     println(someString.upperCaseFirstAndLastCharSimple())
 }
 
-fun printColors(vararg cars: Car?) {
+fun printColors(vararg cars: Car) {
+    println("printColors() method")
+    for (car in cars)
+        println(car)
+}
+
+fun printCarColors(vararg cars: Car?) {
     println("printColors() method")
     for (car in cars)
         println(car)

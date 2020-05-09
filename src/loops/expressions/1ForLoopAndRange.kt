@@ -5,7 +5,7 @@ package loops.expressions
 
 fun main() {
 /*
-    val intRange = 1..10 // include start and End Value
+    val intRange: IntRange = 1..10 // include start and End Value
     for (index in intRange)
         println(index)
 
@@ -22,25 +22,29 @@ fun main() {
     // we use 'in' to find a value in a range
 
     // using 'in' in Range, type of value should be comparable with value in range
-//    println('a' in intRange) // char cant be compared with Integer values in Range
-    */
-/*Error:(22, 17) Kotlin: Type inference failed. The value of the type parameter T
+    // println('a' in intRange) // char cant be compared with Integer values in Range
+*/
+/*
+Error:(22, 17) Kotlin: Type inference failed. The value of the type parameter T
      should be mentioned in input types (argument types, receiver type or expected type).
-     Try to specify it explicitly.*//*
-
+     Try to specify it explicitly.
+*/
 
     //GET DOWN RANGE
     println("Checking Down range")
     val backRange = 5.downTo(1)
     val back = 5 downTo 1 // not correct way to create down range,
     val reversed = back.reversed()
-    for (value in reversed)
+    for (value in back)
         print("$value ")
-*/
+    println()
     // below faculties on range can be applied only on char and Int, cant be on Strings
-    // can be used with Ranges are step(), downTo(), reversed(), until
+
+    // "step(), downTo(), reversed(), until" are used with Ranges
+
     // step and downTo can be used as function on a range, or can be used as keyword on
-    // value eg: 10 downTo 1, reversed is used on range value
+    // value eg: 10 downTo 1,
+    // reversed() is used on range value
 
     for (each in (1..10).reversed().step(3))
         print("$each ")
@@ -55,6 +59,7 @@ fun main() {
     for (each in stepRangeReversed)
         print("$each ")
 
+    println()
     println("Avoiding end value in Range")
     for (each in avoidLast)
         print("$each ")

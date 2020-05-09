@@ -56,9 +56,8 @@ class GlobalEmployee (val firstName: String) {
 // should have constructor keyword in primary constructor if the access modifier
 // is different than 'public'
 class GlobalEmployee internal constructor(val firstName: String) {
-    // constructor(firstName: String) => primary constructor, can't remove the constructor
-    //keyword if its other than 'public'
-    // primary constructor cant contain code block, can use init instead
+    // constructor(firstName: String) => primary constructor, should use 'constructor'
+    // keyword if its other than 'public'
     public fun getInstance() : GlobalEmployee {
         return this
     }
@@ -73,11 +72,10 @@ class GlobalEmployee (val firstName: String) {
     // keyword if its 'public', can define variables which are class fields and will get initialised simultaneously
     // private var fullTe: Boolean = false
 
-    // primary constructor can't contain code block, can use init instead
+    // cant define variables using val/var in secondary constructor like done in primary constructor
     constructor(firstName: String, val fullTime: Boolean) : this(firstName) {
         // it has to delegate its values to primary constructor using ': this(variable value)'
-        // cant define variables using val/var in secondary constructor like done in primary constructor
-        //this.fullTe = fullTime
+        // this.fullTe = fullTime
     }
 }
 */
@@ -90,7 +88,7 @@ class GlobalEmployee (val firstName: String) {
     // (firstName: String) => primary constructor, remove the constructor keyword if its 'public'
     // Can define variables that will be class variables and init simultaneously
     var fullTime: Boolean = false
-    // primary constructor cant contain code block, can use init instead
+
     constructor(firstName: String, fullTime: Boolean) : this(firstName) {
         // it has to delegate its values to primary constructor using ': this(variable value)'
         // cant define variables using val/var in secondary constructor like done in primary constructor
@@ -115,13 +113,11 @@ class GlobalEmployee {
     val firstName: String
     val fullTime: Boolean = false
 
-/*
-    constructor() {
+    constructor() { // no primary constructor defined, no need to delegate anything
         firstName = "Hello"
     }
-*/
-
+/*
     init {
         firstName = "Dummy"
-    }
+    }*/
 }

@@ -1,3 +1,4 @@
+
 fun main(args: Array<String>) {
     val str: String? =  getValue()
     // str variable has possibility to become null, hence its defined as nullable type

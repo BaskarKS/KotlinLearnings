@@ -1,9 +1,10 @@
 package academy.learnprogramming.anothermodule
 
 import checking.packages.academy.learnprogamming.anotherpackage.topLevel // importing top level function from another module
-import list // importing type Alias from another module
+import list // i/[mporting type Alias from another module
 import Department.HR // importing only HR enum value from another module
 import function.basics.upperCaseFirstAndLastChar
+//import function.basics.upperCaseFirstAndLastCharSimple // cannot access its internal
 
 fun main() {
     println(topLevel("\"From Another Module\""))

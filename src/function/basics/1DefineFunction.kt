@@ -3,9 +3,10 @@ package function.basics
 /*
 * function defined as member of class is called methods or member functions
 *
-* fun function_name(parameters) : return type { }
+* fun function_name(parameters) : return-type {
+* }
 *
-* default return type is Unit, if no return type is mentioned, Unit is returned.
+* default return type is Unit, if no return-type is mentioned, Unit is returned.
 * */
 
 fun main() {
@@ -31,6 +32,7 @@ fun main() {
     // if one argument is out of order, other parameter names should be used compulsorily
     // this methodology is best, because of better documentation
     println(labelMultiply(argTwo = 10 , label = "Changed Order, Result is : ", argOne = 2))
+    println(labelMultiply(2, argTwo = 10, label = "Original Order, Result is : "))
 }
 
 // with curly braces, this function has "block body"
@@ -52,7 +54,7 @@ fun printPassed(sentence:String) = println(sentence)
 fun sum(arg1:Int, arg2:Int) = arg1 + arg2
 
 //CASE-4
-// all classes ad member functions are 'public and final' by default
+// all class member functions are 'public and final' by default
 // we have to open it to override or extend it
 class Person(private val fullName: String) {
     fun inUppercase() = fullName.toUpperCase() // this function has expression body,
@@ -60,8 +62,8 @@ class Person(private val fullName: String) {
 }
 
 //CASE-5
-// providing default values to function params, type should be compulsorily
-// mentioned for value parameters (label is value parameter here - its  type is String)
+// providing default values to function params,
+// type should be compulsorily mentioned for value parameters
+// (label is value parameter here - its  type is String)
 fun labelMultiply(argOne: Int, argTwo: Int, label: String = "Product is : ") =
                                                                 "$label ${argOne * argTwo}"
-

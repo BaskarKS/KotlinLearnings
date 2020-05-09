@@ -1,11 +1,14 @@
 package objectkeyword
 
 /*
-'static' is not there in Kotlin, can achieve the same
-top-level functions, top level variables, but inside a class without its instance we cant access
-methods and variables inside the class. to achieve the access of methods and variables
-inside the class, use 'companion objects'
-* */
+'static' is not there in Kotlin, can achieve the same using
+top-level functions,
+top level variables,
+inside a class without its instance we cant access its methods and variables.
+
+to achieve the access of methods and variables inside the class without class instance,
+use 'companion objects'
+*/
 
 //Case-1 : companion object without a Name, use 'Companion' to refer it
 class CheckCompanion {

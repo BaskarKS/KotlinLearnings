@@ -3,6 +3,12 @@ package objectkeyword
 /*
 "Object Expression" also meant as "Anonymous Objects"
 we use this technique wherever we are in need of Anonymous class
+
+1. can define object at the place of caller(at function calling where object is passed as param)
+2. can define and assign the object to a variable and use it.
+3. In object definition, can access and modify the local variables defined above object definition
+4. object can implement multiple interfaces
+
 */
 interface SomeInterface {
     fun mustImplement(num: Int): String

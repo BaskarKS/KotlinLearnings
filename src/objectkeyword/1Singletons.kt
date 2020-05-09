@@ -36,28 +36,34 @@ fun main() {
 }
 
 // singleton can also extend a class and implement a interface
-interface SingletonInterface {
-    val prop : Int
+interface SingletonInterface { // no need to define open for interface
+    val prop : Int // no need to make this variable open, this should be override in implemented class
     fun mustImplement(): Double
 }
-open class SingletonCheck: SingletonInterface {
+open class SingletonCheck(val count: Int): SingletonInterface {
     init {
-        println("Singleton Check Class Init")
+        println("Singleton Check Class Init $count")
     }
-    fun someFunction() = println("some function")
+
+    open fun someFunction() = println("some function")
 
     override val prop: Int
         get() = 213
 
-    override fun mustImplement(): Double {
+    override fun mustImplement(): Double { // this is method of interface no need to make it open for subclass to override it
         return 122.2
     }
 }
 
-object SingletonClassExtend: SingletonCheck() {
+object SingletonClassExtend: SingletonCheck(100) {
     init {
         println("SingleTon Class")
     }
+
+    override val prop: Int
+        get() = super.prop + 10
+
+    override fun someFunction() = println("Some Function in SingleTon Object")
 
     override fun mustImplement(): Double {
         return super.mustImplement() + 11

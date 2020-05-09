@@ -57,7 +57,7 @@ public const val TOP_LEVEL_CONSTANT = 100
 * cant have declaration in primary constructor and define with in the class
 * Eg: data class Sample(val one : String, two : String) <= Error: two is not defined - in-valid
 * 3. data class cant be inner classes / abstract / sealed
-* 3. can define parameters with in the data class apart from primary constructor,
+* 4. can define parameters with in the data class apart from primary constructor,
 * but the inbuilt methods(equals()..) wont include those variables. have to override
 * and use the variables and to provide the functionality
 *
