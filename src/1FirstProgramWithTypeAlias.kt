@@ -24,6 +24,7 @@ fun main(args: Array<String>) {
     val ids : list // declare variable of typealias type,no problem even if its val type
     ids = getList() // define variable, val type can be defined and assigned once
     println(ids)
+
 }
 
 fun getList() : list {

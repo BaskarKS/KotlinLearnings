@@ -38,7 +38,6 @@ fun main() {
     }
     println(num4)
 */
-/*
 
     //CASE-5
     println()
@@ -50,7 +49,6 @@ fun main() {
                     println("In Else Block - Expression")
                     550
                 })
-*/
 
     //CASE-6
     println()

@@ -41,6 +41,7 @@ fun countTo100EnhanceOne():String {
     // invoke the instance member functions, can call the member functions and properties
     // directly
     val numbers = StringBuilder()
+
     return with(numbers) {
         for (i in 1..99) {
             numbers.append(i)

@@ -4,7 +4,7 @@ package loops.expressions
 // with variables
 
 fun main() {
-/*
+    /*
     val intRange: IntRange = 1..10 // include start and End Value
     for (index in intRange)
         println(index)
@@ -13,7 +13,7 @@ fun main() {
     val charRange = 'a'..'z'
     for (each in charRange)
         print("$each ")
-
+    println('a' in charRange)
     println()
     val stringRange = "ABD".."XYZ"
     // for (each in stringRange) // string range doesn't have an iterator
@@ -23,7 +23,8 @@ fun main() {
 
     // using 'in' in Range, type of value should be comparable with value in range
     // println('a' in intRange) // char cant be compared with Integer values in Range
-*/
+
+    */
 /*
 Error:(22, 17) Kotlin: Type inference failed. The value of the type parameter T
      should be mentioned in input types (argument types, receiver type or expected type).
@@ -42,7 +43,7 @@ Error:(22, 17) Kotlin: Type inference failed. The value of the type parameter T
 
     // "step(), downTo(), reversed(), until" are used with Ranges
 
-    // step and downTo can be used as function on a range, or can be used as keyword on
+    // step, until and downTo can be used as function on a range, or can be used as keyword on
     // value eg: 10 downTo 1,
     // reversed() is used on range value
 
@@ -55,6 +56,7 @@ Error:(22, 17) Kotlin: Type inference failed. The value of the type parameter T
     val rangeDownTo = 0 downTo -10 step 2
     val stepRange = 100..150 step 5
     val stepRangeReversed = (200..250).reversed().step(10)
+    val sameStepAbove = 250 downTo 200 step 10
     println("Step range Reversed :")
     for (each in stepRangeReversed)
         print("$each ")

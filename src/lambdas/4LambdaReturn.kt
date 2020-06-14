@@ -1,5 +1,8 @@
 package lambdas
 
+// Naming the lambda has 2 uses
+// 1. to achieve local return with in function, because we cant use break / continue with in lambda
+// 2. to refer the receiver object(this@someStr) with in inner loops
 fun main() {
     val employees = listOf(Employee("john", "smith", 2012),
         Employee(joiningYear = 1999, firstName = "mike", lastName = "jones"),
@@ -50,6 +53,7 @@ internal fun findByLastNameLambda(employees: List<Employee>, nameToFind: String)
 // 1. can be used to do "local return"
 // 2. can be used to refer the particular lambda receiver object
 internal fun findByLastNameLambdaWithName(employees: List<Employee>, nameToFind: String) {
+    println()
     employees.forEach lambdaName@{
         // here the receiver object is Employee type
         if (it.lastName == nameToFind) {

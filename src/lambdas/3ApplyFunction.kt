@@ -18,4 +18,5 @@ fun countTo100() = StringBuilder().apply {
                                         append(100)
                                   }.toString()
 // if the function does is to just return a value, not need a block body can be converted into
-// a expression body
+// a expression body. here the apply block will always return the instance on which it is
+// called which is stringBuilder object and hence countTo100() implemented as expression body
